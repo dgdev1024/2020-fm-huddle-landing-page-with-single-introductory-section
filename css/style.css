@@ -1,0 +1,177 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Poppins:wght@400;700&display=swap");
+
+/* Variables */
+:root {
+  --color-violet: hsl(257, 40%, 49%);
+
+  --font-family-normal: 'Open Sans', sans-serif;
+  --font-weight-normal: 400;
+
+  --font-family-heading: 'Poppins', sans-serif;
+  --font-weight-heading: 400;
+  --font-weight-heading-bold: 700;
+}
+
+/* CSS Reset and Body Reset */
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: var(--font-family-normal);
+  font-weight: var(--font-weight-normal);
+  box-sizing: border-box;
+}
+
+body, main {
+  min-height: 100vh;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading-bold);
+}
+
+/* Body Background */
+body {
+  background-image: url('../img/bg-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--color-violet);
+}
+
+/* Main Content */
+main {
+  width: 80%;
+  max-width: 468px;
+  margin: 0px auto;
+
+  display: grid;
+  grid-template-rows: auto 1fr 1fr auto;
+  grid-template-areas: 'header' 'image' 'action' 'social';
+  align-items: center;
+}
+
+/* Header */
+header {
+  grid-area: header;
+}
+
+header img {
+  display: block;
+  height: 32px;
+  margin: 32px 0px;
+}
+
+/* Hero Image */
+.fm-image {
+  grid-area: image;
+  width: 100%;
+}
+
+/* Call To Action */
+.fm-call-to-action {
+  grid-area: action;
+  text-align: center;
+  color: white;
+}
+
+.fm-call-to-action h1 {
+  padding: 16px 0px;
+  font-size: 1.6em;
+  line-height: 1.5em;
+}
+
+.fm-call-to-action p {
+  line-height: 1.5em;
+}
+
+.fm-call-to-action a {
+  display: block;
+  width: 60%;
+  margin: 24px auto;
+  padding: 8px;
+  font-family: var(--font-family-heading);
+  font-size: 0.8em;
+  text-decoration: none;
+  background-color: white;
+  color: var(--color-violet);
+  border-radius: 32px;
+  box-shadow: 1px 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Social */
+.fm-social {
+  grid-area: social;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.fm-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin: 0px 4px;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+/* Small Tablet Displays */
+@media (min-width: 600px) {
+  body {
+    background-size: cover;
+  }
+}
+
+/* Tablet Displays */
+@media (min-width: 800px) {
+  body {
+    background-image: url('../img/bg-desktop.svg');
+  }
+
+  main {
+    width: 90%;
+    max-width: none;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    grid-template-areas:
+      'header header'
+      'image action'
+      'social social';
+  }
+
+  header img {
+    height: 42px;
+  }
+
+  .fm-call-to-action {
+    text-align: left;
+  }
+
+  .fm-call-to-action h1 {
+    font-size: 2.2em;
+  }
+
+  .fm-call-to-action a {
+    width: 33%;
+    margin: 24px 0px;
+    padding: 12px;
+    text-align: center;
+    font-size: 0.9em;
+  }
+
+  .fm-social {
+    justify-content: flex-end;
+    padding: 16px 0px;
+  }
+}
